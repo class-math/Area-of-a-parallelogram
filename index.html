@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防災算数クエスト：避難所の形を計算しよう！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <div class="status-bar">
+                <strong>ミッション：</strong> 体育館の『平行四辺形』のスペースを長方形に変形させて、正しい面積を計算せよ！
+            </div>
+        </header>
+
+        <main>
+            <div class="stage">
+                <div class="grid-background"></div>
+                
+                <div id="height-line" class="guide-line"></div>
+                <div id="height-text" class="guide-text">高さ</div>
+
+                <div id="shape-trapezoid" class="shape-part"></div>
+                <div id="shape-triangle" class="shape-part"></div>
+
+                <div id="moving-base-container" class="moving-container">
+                    <div class="arrow-line">←─────────────────→</div>
+                    <div class="arrow-label">底辺</div>
+                </div>
+            </div>
+
+            <div class="interactive-area">
+                <div class="control-panel">
+                    <button id="transform-btn" class="game-btn">【等積変形】の魔法を使う</button>
+                    <button id="next-btn" class="game-btn next-btn hidden">次の問題にすすむ ➡️</button>
+                </div>
+
+                <div class="side-panel">
+                    <div id="instruction-box" class="hint-box">
+                        <strong>【隊長からのヒント】</strong><br>
+                        魔法を使って形が変わったとき、元の図形の<strong>「底辺」</strong>と<strong>「高さ」</strong>が、長方形のどこの長さにぴったり重なるか、よーく見てみよう！
+                    </div>
+
+                    <div class="answer-area">
+                        <div class="input-row">
+                            <label>平行四辺形の『底辺』：</label>
+                            <span id="label-base" class="fixed-num">5</span> m
+                        </div>
+                        <div class="input-row">
+                            <label>『高さ』：</label>
+                            <span id="label-height" class="fixed-num">3</span> m
+                        </div>
+                        <div class="input-row calc-row">
+                            <label>計算：</label>
+                            <input type="number" id="input-base" class="calc-input" placeholder="底辺">
+                            <span> × </span>
+                            <input type="number" id="input-height" class="calc-input" placeholder="高さ">
+                            <span> = </span>
+                            <input type="number" id="user-answer" class="calc-input" placeholder="面積">
+                            <span> m² (枚)</span>
+                        </div>
+                        <button id="check-btn" class="game-btn submit-btn">解答を送信</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="result-message" class="hidden"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
